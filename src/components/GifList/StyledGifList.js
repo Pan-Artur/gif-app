@@ -14,6 +14,7 @@ export const StyledGifList = styled.ul`
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 200px;
+    cursor: pointer;
   }
 
   & img {

@@ -36,16 +36,17 @@ export class App extends Component {
       this.setState({ gifs: data.data, hasSearched: true });
     } catch(error) {
       console.error(error);
+      this.setState({ gifs: [], hasSearched: true });
     }
   }
 
   render() {
-    const { searchValue } = this.state;
+    const { searchValue, hasSearched } = this.state;
 
     return (
       <>
         <GifSearch value={searchValue} onInputChange={this.handleInputChange} onSearch={this.handleSearch} onKeyPress={this.handleKeyPress} />
-        <GifList gifs={this.state.gifs} />
+        <GifList gifs={this.state.gifs} hasSearched={hasSearched} />
       </>
     );
   }

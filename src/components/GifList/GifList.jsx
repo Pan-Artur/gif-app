@@ -4,7 +4,7 @@ import { StyledGifList } from "./StyledGifList";
 
 export class GifList extends Component {
   render() {
-    const { gifs } = this.props;
+    const { gifs, hasSearched } = this.props;
 
     return (
       <StyledGifList>
@@ -15,7 +15,7 @@ export class GifList extends Component {
             </li>
           ))
         ) : (
-          <p>Немає знайдених GIF-файлів</p>
+          !hasSearched && <p>Немає знайдених GIF-файлів</p>
         )}
       </StyledGifList>
     );
